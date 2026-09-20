@@ -1,0 +1,18 @@
+<div class="task-container">
+  <h2>Task List</h2>
+
+  <input [(ngModel)]="newTaskTitle" placeholder="Tugas baru..." />
+  <button (click)="addTask()">Tambah</button>
+
+  <ul>
+    <li *ngFor="let task of tasks">
+      <span [class.done]="task.is_done">{{ task.title }}</span>
+      <button (click)="toggleDone(task)">
+        {{ task.is_done ? 'Batal' : 'Selesai' }}
+      </button>
+      <button (click)="removeTask(task.id!)">Hapus</button>
+    </li>
+  </ul>
+
+  <p *ngIf="tasks.length === 0">Belum ada task.</p>
+</div>
