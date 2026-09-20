@@ -1,59 +1,105 @@
-# TaskManager
+# Angular Task Manager
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.23.
+Proyek latihan CRUD sederhana menggunakan Angular (frontend) dan PHP Slim + PostgreSQL (backend). Dibuat untuk belajar framework baru.
 
-## Development server
+> ⚠️ **Status: Work in Progress** — proyek ini masih dalam pengembangan, beberapa fitur mungkin belum lengkap atau masih disempurnakan.
 
-To start a local development server, run:
+## Tentang Proyek
+
+Task Manager sederhana yang memungkinkan pengguna untuk:
+- Menambahkan task baru
+- Menandai task sebagai selesai/belum selesai
+- Menghapus task
+- Melihat daftar task yang tersimpan di database
+
+## Tech Stack
+
+**Frontend:**
+- Angular 21 (standalone components)
+- TypeScript
+- RxJS
+
+**Backend:**
+- PHP Slim Framework
+- PostgreSQL
+
+## Struktur Proyek
+
+```
+src/app/
+  app.ts, app.html, app.config.ts   -> root component & konfigurasi
+  task.ts                            -> model & service (CRUD API calls)
+  task-list/                         -> komponen tampilan daftar task
+```
+
+## Menjalankan Proyek Secara Lokal
+
+### Frontend (Angular)
+
+Pastikan Node.js dan Angular CLI sudah terinstall, lalu jalankan:
 
 ```bash
+npm install
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Buka `http://localhost:4200/` di browser. Aplikasi akan otomatis reload setiap ada perubahan pada source file.
 
-## Code scaffolding
+### Backend (PHP Slim)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Backend berjalan terpisah di folder lain (`task-manager-api`). Pastikan PHP, Composer, dan PostgreSQL sudah terinstall, lalu jalankan:
+
+```bash
+php -S localhost:8080 -t public
+```
+
+Pastikan database PostgreSQL dan konfigurasi `.env` sudah disesuaikan sebelum menjalankan backend.
+
+## Code Scaffolding
+
+Angular CLI menyediakan tools scaffolding untuk generate komponen baru:
 
 ```bash
 ng generate component component-name
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Untuk daftar lengkap schematic yang tersedia (components, directives, pipes):
 
 ```bash
 ng generate --help
 ```
 
-## Building
-
-To build the project run:
+## Build
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Hasil build akan tersimpan di folder `dist/`. Secara default, production build sudah dioptimasi untuk performa.
 
-## Running unit tests
+## Unit Testing
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Menjalankan unit test dengan [Vitest](https://vitest.dev/):
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+## End-to-End Testing
 
-For end-to-end (e2e) testing, run:
+Angular CLI tidak menyertakan framework e2e testing secara default. Kamu bisa memilih framework yang sesuai kebutuhan.
 
 ```bash
 ng e2e
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## To-Do
 
-## Additional Resources
+- [ ] Styling tampilan (masih default browser)
+- [ ] Validasi input
+- [ ] Error handling untuk request yang gagal
+- [ ] Deployment ke server
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Referensi
+
+Proyek ini dibuat menggunakan [Angular CLI](https://github.com/angular/angular-cli) versi 21.2.23. Untuk dokumentasi lebih lanjut, kunjungi [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli).
